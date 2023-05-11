@@ -29,7 +29,7 @@ class PortfolioServiceCdkStack(Stack):
         super().__init__(scope, construct_id)
         self.create_portfolio_service(sentiment_api_arn)
 
-    def create_portfolio_service(self, sentiment_api_arn) -> None:
+    def create_portfolio_service(self, sentiment_api_arn:str) -> None:
         # Create DynamoDb Table
         portfolio_table = dynamodb_.Table(
             self,
@@ -91,6 +91,4 @@ class PortfolioServiceCdkStack(Stack):
 
         # add env variables of lambda
         get_riskscore_handler.add_environment("TABLE_NAME", portfolio_table.table_name)
-        get_sentiments_handler.add_environment(
-            "SENTIMENT_API_ARN", sentiment_api_arn
-        )
+        get_sentiments_handler.add_environment("SENTIMENT_API_ARN", sentiment_api_arn)

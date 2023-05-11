@@ -44,6 +44,7 @@ class FinBotCdkStack(Stack):
             "FinBot",
             idle_session_ttl_in_seconds=123,
             name="finbot",
+            data_privacy={},
             role_arn="{ROLE_ARN_TO_BUILD_RUN_BOT}",
         )
 
