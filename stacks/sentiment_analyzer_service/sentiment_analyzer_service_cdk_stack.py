@@ -17,7 +17,7 @@ from constructs import Construct
 from sagemaker.huggingface import HuggingFaceModel
 
 TABLE_NAME = "fin_news_table"
-
+ROLE="arn:aws:iam::164941468929:role/service-role/AmazonSageMaker-ExecutionRole-20230214T170512"
 
 ## This calss will create all components required for sentiment analyzer
 class SentimentAnalyzerServiceCdkStack(Stack):
@@ -46,7 +46,7 @@ class SentimentAnalyzerServiceCdkStack(Stack):
             pytorch_version="1.10.2",
             py_version="py38",
             env=hub,
-            role="arn:aws:iam::164941468929:role/service-role/AmazonSageMaker-ExecutionRole-20230214T170512",
+            role=ROLE,
         )
 
         # Define the SageMaker endpoint

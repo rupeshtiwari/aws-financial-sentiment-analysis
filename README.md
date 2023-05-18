@@ -8,6 +8,10 @@ Creates an [AWS Lambda](https://aws.amazon.com/lambda/) function writing to [Ama
 
 ![architecture](docs/architecture.png)
 
+## CDK diagram
+
+![](docs/cdk-diagram.png)
+
 ## Setup
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
